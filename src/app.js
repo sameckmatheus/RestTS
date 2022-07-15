@@ -1,3 +1,4 @@
+// Set variables and librarys
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
@@ -27,6 +28,6 @@ class App {
     routes() {
       this.app.use(routes);
     }
-}
+} 
 
 module.exports = new App().app;
