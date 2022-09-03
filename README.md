@@ -51,6 +51,6 @@ Mas, o que é uma API ?
 ## Routes:
 
 ```bash
-# Create user
+# Add user
 Post: /add-user
 ```
