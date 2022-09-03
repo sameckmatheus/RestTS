@@ -3,6 +3,27 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="100px" />
 </div>
 
+## :mag: About:
+
+Structure of a typescript api, already configured with eslint
+<br>
+
+## 👷 how to run it:
+
+```bash
+# clone the repository
+git clone https://github.com/sameckmatheus/rest.api.v1.0.0.git
+
+# open an IDE of your choice
+
+# Add data to .env
+# Create database in postgres with dump that was made available
+
+# run yarn to install dependencies, after that, use yarn dev to start the server
+yarn
+yarn dev
+```
+
 <h2 align="center">API feita em javascript. Iniciando os estudos com Node JS.</h2>
 
 <h3 algn="justify"> 
@@ -21,8 +42,15 @@ Mas, o que é uma API ?
   O que temos de novo por aqui ?
 </h3>
 <div align="center">
-  <img src="images/readme-restapi.png" width="100%"><br><br>
+  <img src="images/readme-restapi.png" width="100%">
   <p align="justify">
-    Esta atualização do projeto consta com novas funcionalidaes como criptografia de passwords aprimorada juntamente com a utilização do JWT para a realização de autenticações através de tokens no padrão 'sha256'. Além de updates na área de controllers (User & Login) que permite uma melhora significativa no armazenamento dos dados coletados através do cadastro criado na primeira parte da aplicação, onde fizemos a utilização do MongoDB Compass para armazenar as informações e assim proporcionar um melhor entendimento da aplicação em si. A prózima atualização contará com ua inegração de multiplos bancos de dados (ex: mysql) além de uma integração com o Whatsapp, aguardem as cenas dos próximos capítulos.
+    Esta atualização do projeto consta com novas funcionalidaes como criptografia de passwords aprimorada juntamente com a utilização do JWT para a realização de autenticações através de tokens no padrão 'sha256'. Além de updates na área de controllers (User & Login) que permite uma melhora significativa no armazenamento dos dados coletados através do cadastro criado na primeira parte da aplicação, onde fizemos a utilização do MongoDB Compass para armazenar as informações e assim proporcionar um melhor entendimento da aplicação em si. A prózima atualização contará com ua inegração de multiplos bancos de dados (ex: mysql) além de uma integração com o Whatsapp, aguardem as cenas dos próximos capítulos...
   </p>
 </div>
+
+## Routes:
+
+```bash
+# Create user
+Post: /add-user
+```
