@@ -17,7 +17,7 @@ class LoginController {
         if(!(await bcrypt.compare(password, userExist.password))) {
             return res.status(400).json({
                 error: true,
-                message: "Senha inválida!"
+                message: "Invalid Password!"
             })
         }
 
