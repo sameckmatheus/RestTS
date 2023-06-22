@@ -1,36 +1,28 @@
 const jwt = require('jsonwebtoken');
-const { promisify } = require('util');
 const config = require('../../config/auth');
 
 module.exports = async (req, res, next) => {
-    const auth = req.headers.authorization;
+    const authHeader = req.headers.authorization;
 
-    if(!auth) {
+    if (!authHeader) {
         return res.status(401).json({
             error: true,
             code: 130,
             message: "Token de autenticação não existente!"
-        })
+        });
     }
-    const [, token] = auth.split(' ');
+
+    const [, token] = authHeader.split(' ');
 
     try {
-        const decoded = await promisify(jwt.verify)(token, config.secret);
-        if(!decoded) {
-            return res.status(401).json({
-                error: true,
-                code: 130,
-                message: "Token de autenticação expirado!"
-            })
-        } else {
-            req.user_id = decoded.id;
-            next();
-        }
-    } catch {
+        const decoded = jwt.verify(token, config.secret);
+        req.user_id = decoded.id;
+        next();
+    } catch (err) {
         return res.status(401).json({
             error: true,
             code: 130,
-            message: "Token de autenticação inválido!"
-        })
+            message: err.name === 'TokenExpiredError' ? "Token de autenticação expirado!" : "Token de autenticação inválido!"
+        });
     }
 }
