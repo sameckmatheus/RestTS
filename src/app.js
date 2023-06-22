@@ -18,6 +18,16 @@ class App {
             password: 'password1',
             database: 'database1'
         });
+
+        const connection2 = mysql.createConnection({
+            host: 'localhost',
+            user: 'dbuser2',
+            password: 'password2',
+            database: 'database2'
+        });
+        
+        connection1.connect();
+        connection2.connect();
     }
 
     middlewares() {
