@@ -1,6 +1,6 @@
 class Person {
   sayMyName() {
-    return "Sameck"
+    return "4dev"
   }
 }
 
